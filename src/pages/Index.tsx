@@ -1,20 +1,17 @@
-import { Navigation } from '../components/Navigation';
+import { Layout } from '../components/Layout';
 import { Hero } from '../components/Hero';
 import { Projects } from '../components/Projects';
 import { About } from '../components/About';
 import { Contact } from '../components/Contact';
-import { Footer } from '../components/Footer';
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
-      <Navigation />
+    <Layout>
       <Hero />
       <Projects />
       <About />
       <Contact />
-      <Footer />
-    </main>
+    </Layout>
   );
 };
 

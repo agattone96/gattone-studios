@@ -20,40 +20,56 @@ export default {
     extend: {
       colors: {
         cosmic: {
-          dark: "#1A1F2C",
+          dark: "#1B1035",
+          darker: "#0D002E",
+          black: "#000000",
+          accent: "#FF007F",
+          silver: "#C0C0C0",
+          lavender: "#B19CD9",
           light: "#E5DEFF",
-          accent: "#FF719A",
-          purple: "#9b87f5",
         },
       },
       fontFamily: {
-        cinzel: ["Cinzel", "serif"],
-        inter: ["Inter", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
       keyframes: {
-        "twinkle": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0" },
+        "nebula": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        "stardust": {
+          "0%": { transform: "scale(1)", opacity: "1" },
+          "100%": { transform: "scale(1.5)", opacity: "0" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
         "glow": {
-          "0%, 100%": { textShadow: "0 0 10px #FF719A" },
-          "50%": { textShadow: "0 0 20px #FF719A, 0 0 30px #FF719A" },
+          "0%, 100%": { textShadow: "0 0 10px #FF007F" },
+          "50%": { textShadow: "0 0 20px #FF007F, 0 0 30px #FF007F" },
         },
-        "portal": {
-          "0%": { transform: "scale(1)", opacity: "0" },
-          "50%": { transform: "scale(1.2)", opacity: "0.5" },
-          "100%": { transform: "scale(1)", opacity: "0" },
+        "shooting-star": {
+          "0%": { transform: "translateX(-100%) translateY(0)", opacity: "1" },
+          "100%": { transform: "translateX(200%) translateY(-200%)", opacity: "0" },
         },
       },
       animation: {
-        "twinkle": "twinkle 3s ease-in-out infinite",
+        "nebula": "nebula 15s ease infinite",
+        "stardust": "stardust 2s ease-out forwards",
+        "shimmer": "shimmer 3s linear infinite",
         "float": "float 6s ease-in-out infinite",
         "glow": "glow 2s ease-in-out infinite",
-        "portal": "portal 2s ease-in-out infinite",
+        "shooting-star": "shooting-star 2s ease-out forwards",
+      },
+      backgroundImage: {
+        "cosmic-gradient": "linear-gradient(135deg, #1B1035 0%, #0D002E 100%)",
+        "accent-gradient": "linear-gradient(90deg, #FF007F 0%, #B19CD9 100%)",
       },
     },
   },
