@@ -43,11 +43,17 @@ export default {
           "0%, 100%": { textShadow: "0 0 10px #FF719A" },
           "50%": { textShadow: "0 0 20px #FF719A, 0 0 30px #FF719A" },
         },
+        "portal": {
+          "0%": { transform: "scale(1)", opacity: "0" },
+          "50%": { transform: "scale(1.2)", opacity: "0.5" },
+          "100%": { transform: "scale(1)", opacity: "0" },
+        },
       },
       animation: {
         "twinkle": "twinkle 3s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
         "glow": "glow 2s ease-in-out infinite",
+        "portal": "portal 2s ease-in-out infinite",
       },
     },
   },
