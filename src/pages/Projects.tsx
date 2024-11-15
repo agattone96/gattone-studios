@@ -1,15 +1,17 @@
 import { Navigation } from '../components/Navigation';
-import { Hero } from '../components/Hero';
+import { Projects as ProjectsSection } from '../components/Projects';
 import { Footer } from '../components/Footer';
 
-const Index = () => {
+const Projects = () => {
   return (
     <main className="min-h-screen">
       <Navigation />
-      <Hero />
+      <div className="pt-24">
+        <ProjectsSection />
+      </div>
       <Footer />
     </main>
   );
 };
 
-export default Index;
+export default Projects;
