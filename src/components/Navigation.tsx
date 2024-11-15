@@ -11,6 +11,13 @@ export const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${
       isScrolled ? 'bg-cosmic-dark/90 backdrop-blur-sm py-4 shadow-lg' : 'py-6'
@@ -22,22 +29,34 @@ export const Navigation = () => {
           </span>
         </h1>
         <div className="space-x-8 hidden md:block">
-          <a href="#home" className="nav-link group">
+          <button 
+            onClick={() => scrollToSection('hero')} 
+            className="nav-link group"
+          >
             Home
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-          </a>
-          <a href="#projects" className="nav-link group">
+          </button>
+          <button 
+            onClick={() => scrollToSection('projects')} 
+            className="nav-link group"
+          >
             Projects
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-          </a>
-          <a href="#about" className="nav-link group">
+          </button>
+          <button 
+            onClick={() => scrollToSection('meet-the-artist')} 
+            className="nav-link group"
+          >
             About
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-          </a>
-          <a href="#contact" className="nav-link group">
+          </button>
+          <button 
+            onClick={() => scrollToSection('contact')} 
+            className="nav-link group"
+          >
             Contact
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-          </a>
+          </button>
         </div>
       </div>
     </nav>
