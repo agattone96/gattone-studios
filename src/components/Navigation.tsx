@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,22 +24,21 @@ export const Navigation = () => {
           </span>
         </Link>
         <div className="space-x-8 hidden md:block">
-          <Link to="/" className="nav-link group">
-            Home
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-          </Link>
-          <Link to="/projects" className="nav-link group">
-            Projects
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-          </Link>
-          <Link to="/about" className="nav-link group">
-            About
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-          </Link>
-          <Link to="/contact" className="nav-link group">
-            Contact
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-          </Link>
+          {[
+            { path: "/", label: "Home" },
+            { path: "/projects", label: "Projects" },
+            { path: "/about", label: "About" },
+            { path: "/contact", label: "Contact" }
+          ].map(({ path, label }) => (
+            <Link
+              key={path}
+              to={path}
+              className={`nav-link group ${location.pathname === path ? 'text-cosmic-accent' : ''}`}
+            >
+              {label}
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+            </Link>
+          ))}
         </div>
       </div>
     </nav>

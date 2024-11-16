@@ -1,5 +1,5 @@
 import { Navigation } from '../components/Navigation';
-import { MeetTheArtist } from '../components/MeetTheArtist';
+import { About as AboutSection } from '../components/About';
 import { Footer } from '../components/Footer';
 
 const About = () => {
@@ -7,7 +7,7 @@ const About = () => {
     <main className="min-h-screen">
       <Navigation />
       <div className="pt-24">
-        <MeetTheArtist />
+        <AboutSection />
       </div>
       <Footer />
     </main>
