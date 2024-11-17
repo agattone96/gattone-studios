@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { SiArtstation } from "react-icons/si";
 
 export const About = () => {
   const personalInfo = {
@@ -8,29 +10,44 @@ export const About = () => {
       email: "allisongattone@gmail.com",
       phone: "+1 (727) 271-2748",
       social: [
-        { platform: "Instagram", url: "www.instagram.com/poppingpeppersofficial" },
-        { platform: "Facebook", url: "www.facebook.com/poppingpeppersofficial" },
-        { platform: "Twitter", url: "www.twitter.com/PoppingPeppers" },
-        { platform: "LinkedIn", url: "www.linkedin.com/in/allison-gattone" }
+        { platform: "LinkedIn", url: "https://www.linkedin.com/in/allison-gattone/", icon: <FaLinkedin /> },
+        { platform: "Instagram", url: "https://www.instagram.com/allidraws_official/", icon: <FaInstagram /> },
+        { platform: "ArtStation", url: "https://www.artstation.com/allisongattone", icon: <SiArtstation /> },
+        { platform: "Facebook", url: "https://www.facebook.com/AllisonGattone/", icon: <FaFacebook /> }
       ]
     }
   };
 
-  const projects = [
+  const timeline = [
     {
-      year: 2023,
-      title: "Alli Draws Launch",
-      description: "Launched creative design studio specializing in custom designs and branding strategies"
+      year: "2020–Present",
+      title: "Alli Draws",
+      description:
+        "Built Alli Draws as a versatile and passion-driven brand, producing art and design projects that span multiple industries."
     },
     {
-      year: 2022,
-      title: "Popping Peppers Brand Creation",
-      description: "Created and launched the fiery hot sauce brand with complete brand identity"
+      year: "2020–2023",
+      title: "Tune Up the Manly Salon",
+      description:
+        "Elevated Tune Up the Manly Salon's branding with polished photography and creative promotional materials."
     },
     {
-      year: 2021,
-      title: "Creative Director Position",
-      description: "Began role as Creative Director, leading brand innovation projects"
+      year: "2023–Present",
+      title: "Popping Peppers",
+      description:
+        "Established Popping Peppers as a bold, cohesive hot sauce brand that highlights expertise in branding and product design."
+    },
+    {
+      year: "2023–2024",
+      title: "Staxx",
+      description:
+        "Delivered sleek, minimalist branding solutions for Staxx, showcasing adaptability and professionalism."
+    },
+    {
+      year: "2023–Present",
+      title: "SCL",
+      description:
+        "Created impactful social media campaigns and assets for SCL, aligning visuals with strategic goals."
     }
   ];
 
@@ -60,10 +77,15 @@ export const About = () => {
           </h2>
           <div className="text-cosmic-light/90 text-lg mb-12 space-y-4">
             <p>
-              Born in Atlanta, Georgia, Allison Gattone embodies a bold and adventurous spirit. As a self-taught artist, 
-              her journey into the creative world began purely out of passion. With no formal training, she has cultivated 
-              a unique, compelling voice through her work, drawing inspiration from her global travels and deep appreciation 
-              for storytelling.
+              Born in Atlanta, Georgia, and raised in Peachtree Corners, Allison Gattone is a self-taught artist and brand visionary 
+              whose creative journey spans art, design, and storytelling. With a passion for bold expression and an eye for detail, 
+              she has crafted a portfolio that speaks to her versatility and drive.
+            </p>
+            <p>
+              Allison is the founder of <span className="text-cosmic-accent">Alli Draws</span>, a creative studio showcasing her talent 
+              for blending intricate artistry with functional design. From custom branding to merchandise creation, she thrives on turning 
+              ideas into visually compelling realities. Her work includes building unique brands that reflect her passion for storytelling 
+              and design innovation.
             </p>
             <div className="flex flex-col items-center space-y-2">
               <p className="font-semibold">{personalInfo.location}</p>
@@ -71,58 +93,37 @@ export const About = () => {
               <p>{personalInfo.contact.phone}</p>
             </div>
           </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="p-6 rounded-lg bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20"
-          >
-            <h3 className="font-cinzel text-2xl mb-4 text-cosmic-accent">Professional Expertise</h3>
-            <p className="text-cosmic-light/80">
-              Allison excels as a Creative Director and Brand Innovator, specializing in bringing bold, unforgettable ideas to life. 
-              She is the driving force behind two standout brands: Alli Draws and Popping Peppers.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="p-6 rounded-lg bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20"
-          >
-            <h3 className="font-cinzel text-2xl mb-4 text-cosmic-accent">Connect With Me</h3>
-            <div className="space-y-2">
-              {personalInfo.contact.social.map((platform) => (
-                <a
-                  key={platform.platform}
-                  href={`https://${platform.url}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-cosmic-light/80 hover:text-cosmic-accent transition-colors"
-                >
-                  {platform.platform}
-                </a>
-              ))}
-            </div>
-          </motion.div>
+          <h3 className="font-cinzel text-2xl mb-4 text-cosmic-accent">Connect With Me</h3>
+          <div className="flex justify-center space-x-4 mb-16">
+            {personalInfo.contact.social.map((platform) => (
+              <a
+                key={platform.platform}
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cosmic-light/80 hover:text-cosmic-accent text-2xl transition-colors"
+              >
+                {platform.icon}
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <h3 className="font-cinzel text-2xl mb-6 text-center text-cosmic-accent">Journey Through The Stars</h3>
+          <h3 className="font-cinzel text-2xl mb-6 text-center text-cosmic-accent">Timeline</h3>
           <div className="space-y-8">
-            {projects.map((project, index) => (
+            {timeline.map((entry, index) => (
               <motion.div
-                key={project.year}
+                key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 className="flex items-center gap-4"
               >
-                <div className="w-24 text-right font-cinzel text-cosmic-accent">{project.year}</div>
+                <div className="w-24 text-right font-cinzel text-cosmic-accent">{entry.year}</div>
                 <div className="w-4 h-4 rounded-full bg-cosmic-accent animate-pulse" />
                 <div className="flex-1 p-4 rounded-lg bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20">
-                  <h4 className="font-cinzel mb-2">{project.title}</h4>
-                  <p className="text-cosmic-light/80">{project.description}</p>
+                  <h4 className="font-cinzel mb-2">{entry.title}</h4>
+                  <p className="text-cosmic-light/80">{entry.description}</p>
                 </div>
               </motion.div>
             ))}
