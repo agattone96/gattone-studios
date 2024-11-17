@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
-import { CosmicButton } from "@/components/ui/cosmic-button";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -79,9 +78,13 @@ export const Contact = () => {
             />
           </div>
 
-          <div className="flex justify-center">
-            <CosmicButton text="SEND MESSAGE" type="submit" />
-          </div>
+          <button
+            type="submit"
+            className="w-full cosmic-button group"
+          >
+            <span className="relative z-10">Send Message</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-cosmic-purple via-cosmic-accent to-cosmic-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </button>
         </motion.form>
 
         <div className="mt-16 text-center">
