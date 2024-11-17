@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Instagram, Facebook, Linkedin, Mail } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -25,7 +26,7 @@ export const Footer = () => {
               <ul className="space-y-2">
                 {['Home', 'Projects', 'About', 'Contact'].map((item) => (
                   <li key={item}>
-                    <a href={`#${item.toLowerCase()}`} className="text-cosmic-light/80 hover:text-cosmic-accent transition-colors">
+                    <a href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} className="text-cosmic-light/80 hover:text-cosmic-accent transition-colors">
                       {item}
                     </a>
                   </li>
@@ -55,16 +56,48 @@ export const Footer = () => {
             <div>
               <h4 className="font-cinzel text-xl mb-4 text-cosmic-accent">Connect</h4>
               <div className="flex space-x-4">
-                {['Twitter', 'Instagram', 'LinkedIn', 'GitHub'].map((platform) => (
-                  <a
-                    key={platform}
-                    href="#"
-                    className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
-                             flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 transition-colors"
-                  >
-                    {platform[0]}
-                  </a>
-                ))}
+                <a
+                  href="https://www.instagram.com/allidraws_official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
+                           flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 
+                           hover:text-cosmic-accent transition-all duration-300"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a
+                  href="https://www.facebook.com/AllisonGattone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
+                           flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 
+                           hover:text-cosmic-accent transition-all duration-300"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={20} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/allison-gattone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
+                           flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 
+                           hover:text-cosmic-accent transition-all duration-300"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a
+                  href="mailto:allisongattone@gmail.com"
+                  className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
+                           flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 
+                           hover:text-cosmic-accent transition-all duration-300"
+                  aria-label="Email"
+                >
+                  <Mail size={20} />
+                </a>
               </div>
             </div>
           </div>
