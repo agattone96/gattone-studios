@@ -78,12 +78,15 @@ export const Contact = () => {
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full cosmic-button group"
-          >
-            <span className="relative z-10">Send Message</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-cosmic-purple via-cosmic-accent to-cosmic-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <button type="submit" className="btn mx-auto">
+            <strong>SEND MESSAGE</strong>
+            <div id="container-stars">
+              <div id="stars"></div>
+            </div>
+            <div id="glow">
+              <div className="circle"></div>
+              <div className="circle"></div>
+            </div>
           </button>
         </motion.form>
       </div>

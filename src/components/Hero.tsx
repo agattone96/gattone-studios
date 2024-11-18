@@ -109,12 +109,15 @@ export const Hero = () => {
         <p className="text-xl md:text-2xl mb-8 text-cosmic-light/90 font-inter">
           Crafting Digital Magic & Memorable Experiences in the Dark Cosmos
         </p>
-        <Link 
-          to="/projects" 
-          className="cosmic-button group relative overflow-hidden"
-        >
-          <span className="relative z-10">Explore My Work</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-cosmic-purple via-cosmic-accent to-cosmic-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <Link to="/projects" className="btn mx-auto">
+          <strong>EXPLORE MY WORK</strong>
+          <div id="container-stars">
+            <div id="stars"></div>
+          </div>
+          <div id="glow">
+            <div className="circle"></div>
+            <div className="circle"></div>
+          </div>
         </Link>
       </div>
     </div>

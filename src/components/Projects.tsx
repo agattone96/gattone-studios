@@ -124,12 +124,16 @@ export const Projects = () => {
           <h3 className="font-cinzel text-2xl mb-4 text-cosmic-light">
             Inspired by what you see? Let's create something extraordinary together!
           </h3>
-          <Button 
-            onClick={() => navigate('/contact')}
-            className="cosmic-button bg-cosmic-accent hover:bg-cosmic-accent/80 text-white"
-          >
-            Contact Me
-          </Button>
+          <Link to="/contact" className="btn mx-auto">
+            <strong>CONTACT ME</strong>
+            <div id="container-stars">
+              <div id="stars"></div>
+            </div>
+            <div id="glow">
+              <div className="circle"></div>
+              <div className="circle"></div>
+            </div>
+          </Link>
         </div>
       </div>
 
