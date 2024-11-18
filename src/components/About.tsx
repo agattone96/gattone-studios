@@ -128,9 +128,9 @@ export const About = () => {
                 href={platform.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-cosmic-dark/30 backdrop-blur-sm border border-cosmic-accent/20 
-                         flex items-center justify-center text-cosmic-light/80 hover:text-cosmic-accent 
-                         hover:border-cosmic-accent hover:scale-110 transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
+                         flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 
+                         hover:text-cosmic-accent transition-all duration-300"
                 whileHover={{ y: -3 }}
               >
                 <FontAwesomeIcon icon={platform.icon} className="text-xl" />

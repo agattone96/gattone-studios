@@ -1,7 +1,37 @@
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Linkedin, Mail } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedinIn, faInstagram, faFacebookF, faArtstation } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export const Footer = () => {
+  const socialLinks = [
+    {
+      icon: faInstagram,
+      url: "https://www.instagram.com/allidraws_official",
+      label: "Instagram"
+    },
+    {
+      icon: faFacebookF,
+      url: "https://www.facebook.com/AllisonGattone",
+      label: "Facebook"
+    },
+    {
+      icon: faLinkedinIn,
+      url: "https://www.linkedin.com/in/allison-gattone",
+      label: "LinkedIn"
+    },
+    {
+      icon: faArtstation,
+      url: "https://www.artstation.com/allisongattone",
+      label: "ArtStation"
+    },
+    {
+      icon: faEnvelope,
+      url: "mailto:allisongattone@gmail.com",
+      label: "Email"
+    }
+  ];
+
   return (
     <footer className="relative py-12 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-cosmic-dark to-transparent" />
@@ -56,48 +86,20 @@ export const Footer = () => {
             <div>
               <h4 className="font-cinzel text-xl mb-4 text-cosmic-accent">Connect</h4>
               <div className="flex space-x-4">
-                <a
-                  href="https://www.instagram.com/allidraws_official"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
-                           flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 
-                           hover:text-cosmic-accent transition-all duration-300"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={20} />
-                </a>
-                <a
-                  href="https://www.facebook.com/AllisonGattone"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
-                           flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 
-                           hover:text-cosmic-accent transition-all duration-300"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={20} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/allison-gattone"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
-                           flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 
-                           hover:text-cosmic-accent transition-all duration-300"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a
-                  href="mailto:allisongattone@gmail.com"
-                  className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
-                           flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 
-                           hover:text-cosmic-accent transition-all duration-300"
-                  aria-label="Email"
-                >
-                  <Mail size={20} />
-                </a>
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
+                             flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 
+                             hover:text-cosmic-accent transition-all duration-300"
+                    aria-label={link.label}
+                  >
+                    <FontAwesomeIcon icon={link.icon} size="lg" />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
