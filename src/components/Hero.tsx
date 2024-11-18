@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import CTAButton from './ui/cta-button';
 
 export const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -108,10 +109,9 @@ export const Hero = () => {
         <p className="text-xl md:text-2xl mb-8 text-cosmic-light/90 font-inter">
           Crafting Digital Magic & Memorable Experiences in the Dark Cosmos
         </p>
-        <button className="cosmic-button group relative overflow-hidden">
-          <span className="relative z-10">Explore My Work</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-cosmic-purple via-cosmic-accent to-cosmic-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </button>
+        <CTAButton>
+          Explore My Work
+        </CTAButton>
       </div>
     </div>
   );
