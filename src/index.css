@@ -1,129 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .btn {
-    @apply flex justify-center items-center w-52 h-12 overflow-hidden bg-[length:300%_300%] cursor-pointer backdrop-blur-2xl rounded-full transition-all duration-500 border-4 border-transparent relative;
-    animation: gradient_301 5s ease infinite;
-    background-image: linear-gradient(#212121, #212121),
-      linear-gradient(
-        137.48deg,
-        #ffdb3b 10%,
-        #fe53bb 45%,
-        #8f51ea 67%,
-        #0044ff 87%
-      );
-    background-origin: border-box;
-    background-clip: content-box, border-box;
+@layer base {
+  body {
+    @apply bg-cosmic-dark text-cosmic-light font-inter min-h-screen;
+    background: linear-gradient(135deg, #1A1F2C 0%, #2A3040 100%);
   }
 
-  #container-stars {
-    @apply absolute -z-10 w-full h-full overflow-hidden transition-all duration-500 backdrop-blur-2xl rounded-full;
+  #root {
+    @apply min-h-screen;
+    background: url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=2000') center/cover no-repeat fixed;
+    background-blend-mode: overlay;
+    position: relative;
   }
 
-  .btn strong {
-    @apply z-[2] text-xs tracking-[5px] text-white text-shadow-white;
-  }
-
-  #glow {
-    @apply absolute flex w-48;
-  }
-
-  .circle {
-    @apply w-full h-[30px] blur-2xl -z-10;
-    animation: pulse_3011 4s infinite;
-  }
-
-  .circle:nth-of-type(1) {
-    background: rgba(254, 83, 186, 0.636);
-  }
-
-  .circle:nth-of-type(2) {
-    background: rgba(142, 81, 234, 0.704);
-  }
-
-  .btn:hover #container-stars {
-    @apply z-[1] bg-[#212121];
-  }
-
-  .btn:hover {
-    @apply scale-110;
-  }
-
-  .btn:active {
-    @apply border-[#fe53bb] border-4 border-double;
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    animation: none;
-  }
-
-  .btn:active .circle {
-    @apply bg-[#fe53bb];
-  }
-
-  #stars {
-    @apply relative bg-transparent w-[200rem] h-[200rem];
-  }
-
-  #stars::after {
-    content: "";
-    @apply absolute -top-40 -left-[100rem] w-full h-full;
-    animation: animStarRotate 90s linear infinite;
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
-  }
-
-  #stars::before {
-    content: "";
-    @apply absolute top-0 -left-1/2 w-[170%] h-[500%] opacity-50;
-    animation: animStar 60s linear infinite;
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
+  #root::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 31, 44, 0.85);
+    z-index: -1;
   }
 }
 
-@keyframes animStar {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-135rem);
-  }
+.cosmic-button {
+  @apply px-6 py-3 bg-cosmic-accent text-white rounded-full font-cinzel 
+         transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,113,154,0.5)];
 }
 
-@keyframes animStarRotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0);
-  }
+.nav-link {
+  @apply relative text-cosmic-light hover:text-cosmic-accent transition-colors duration-300
+         after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
+         after:bg-cosmic-accent hover:after:w-full after:transition-all after:duration-300;
 }
 
-@keyframes gradient_301 {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes pulse_3011 {
-  0% {
-    transform: scale(0.75);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-  }
-  100% {
-    transform: scale(0.75);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
+.project-card {
+  @apply relative overflow-hidden rounded-lg transition-transform duration-500 hover:scale-105
+         before:content-[''] before:absolute before:inset-0 before:bg-cosmic-accent/0
+         hover:before:bg-cosmic-accent/20 before:transition-all before:duration-300;
 }

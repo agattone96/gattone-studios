@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import CTAButton from './ui/cta-button';
 
 export const MeetTheArtist = () => {
   return (
@@ -47,9 +46,14 @@ export const MeetTheArtist = () => {
               developing the bold and adventurous branding for Popping Peppers, and creating visionary designs 
               for Alli Draws, my personal creative brand.
             </p>
-            <CTAButton>
-              Explore My Journey
-            </CTAButton>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="cosmic-button group"
+            >
+              <span className="relative z-10">Explore My Journey</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-cosmic-purple via-cosmic-accent to-cosmic-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
+            </motion.button>
           </motion.div>
         </div>
       </div>
