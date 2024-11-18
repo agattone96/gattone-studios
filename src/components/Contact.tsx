@@ -86,23 +86,6 @@ export const Contact = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-cosmic-purple via-cosmic-accent to-cosmic-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </motion.form>
-
-        <div className="mt-16 text-center">
-          <h3 className="font-cinzel text-2xl mb-6 text-cosmic-accent">Follow My Journey</h3>
-          <div className="flex justify-center space-x-6">
-            {['Twitter', 'Instagram', 'LinkedIn', 'GitHub'].map((platform) => (
-              <motion.a
-                key={platform}
-                href="#"
-                whileHover={{ scale: 1.1 }}
-                className="w-12 h-12 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
-                         flex items-center justify-center text-cosmic-light hover:border-cosmic-accent/60 transition-colors"
-              >
-                {platform[0]}
-              </motion.a>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

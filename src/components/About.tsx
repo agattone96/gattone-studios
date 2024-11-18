@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
-import { SiArtstation } from "react-icons/si";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedinIn, faInstagram, faFacebookF, faArtstation } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export const About = () => {
   const personalInfo = {
@@ -10,10 +11,31 @@ export const About = () => {
       email: "allisongattone@gmail.com",
       phone: "+1 (727) 271-2748",
       social: [
-        { platform: "LinkedIn", url: "https://www.linkedin.com/in/allison-gattone/", icon: <FaLinkedin /> },
-        { platform: "Instagram", url: "https://www.instagram.com/allidraws_official/", icon: <FaInstagram /> },
-        { platform: "ArtStation", url: "https://www.artstation.com/allisongattone", icon: <SiArtstation /> },
-        { platform: "Facebook", url: "https://www.facebook.com/AllisonGattone/", icon: <FaFacebook /> }
+        { 
+          platform: "LinkedIn", 
+          url: "https://www.linkedin.com/in/allison-gattone/", 
+          icon: faLinkedinIn 
+        },
+        { 
+          platform: "Instagram", 
+          url: "https://www.instagram.com/allidraws_official/", 
+          icon: faInstagram 
+        },
+        { 
+          platform: "ArtStation", 
+          url: "https://www.artstation.com/allisongattone", 
+          icon: faArtstation 
+        },
+        { 
+          platform: "Facebook", 
+          url: "https://www.facebook.com/AllisonGattone/", 
+          icon: faFacebookF 
+        },
+        { 
+          platform: "Email", 
+          url: "mailto:allisongattone@gmail.com", 
+          icon: faEnvelope 
+        }
       ]
     }
   };
@@ -56,6 +78,7 @@ export const About = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-cosmic-dark via-[#2A1F3D] to-cosmic-dark opacity-50" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16">
+          {/* Profile Image Section */}
           <div className="relative w-48 h-48 mx-auto mb-8">
             <motion.div
               animate={{ rotate: 360 }}
@@ -70,6 +93,8 @@ export const About = () => {
               />
             </div>
           </div>
+
+          {/* About Section */}
           <h2 className="font-cinzel text-4xl md:text-5xl mb-6">
             <span className="bg-gradient-to-r from-cosmic-accent via-cosmic-purple to-cosmic-accent bg-clip-text text-transparent">
               About Me
@@ -93,22 +118,28 @@ export const About = () => {
               <p>{personalInfo.contact.phone}</p>
             </div>
           </div>
+
+          {/* Social Links */}
           <h3 className="font-cinzel text-2xl mb-4 text-cosmic-accent">Connect With Me</h3>
-          <div className="flex justify-center space-x-4 mb-16">
+          <div className="flex justify-center space-x-6 mb-16">
             {personalInfo.contact.social.map((platform) => (
-              <a
+              <motion.a
                 key={platform.platform}
                 href={platform.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cosmic-light/80 hover:text-cosmic-accent text-2xl transition-colors"
+                className="w-12 h-12 rounded-full bg-cosmic-dark/30 backdrop-blur-sm border border-cosmic-accent/20 
+                         flex items-center justify-center text-cosmic-light/80 hover:text-cosmic-accent 
+                         hover:border-cosmic-accent hover:scale-110 transition-all duration-300"
+                whileHover={{ y: -3 }}
               >
-                {platform.icon}
-              </a>
+                <FontAwesomeIcon icon={platform.icon} className="text-xl" />
+              </motion.a>
             ))}
           </div>
         </div>
 
+        {/* Timeline Section */}
         <div className="max-w-3xl mx-auto">
           <h3 className="font-cinzel text-2xl mb-6 text-center text-cosmic-accent">Timeline</h3>
           <div className="space-y-8">
