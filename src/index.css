@@ -23,8 +23,7 @@
   }
 
   .btn strong {
-    @apply z-[2] text-xs tracking-[5px] text-white;
-    text-shadow: 0 0 4px white;
+    @apply z-[2] text-xs tracking-[5px] text-white text-shadow-white;
   }
 
   #glow {
