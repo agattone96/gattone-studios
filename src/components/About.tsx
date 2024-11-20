@@ -6,8 +6,8 @@ import {
   faInstagram,
   faFacebookF,
   faArtstation,
-  faEnvelope,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 // Type definitions
 interface SocialLink {
@@ -228,3 +228,4 @@ export const About: React.FC = () => {
     </section>
   );
 };
+
