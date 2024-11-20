@@ -32,6 +32,9 @@ export default {
         cinzel: ["Cinzel", "serif"],
         inter: ["Inter", "sans-serif"],
       },
+      textShadow: {
+        glow: "0 0 10px #FF719A, 0 0 20px #FF719A",
+      },
       keyframes: {
         "twinkle": {
           "0%, 100%": { opacity: "1" },
@@ -69,5 +72,8 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('tailwindcss-textshadow'),
+  ],
 } satisfies Config;

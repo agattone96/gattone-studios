@@ -58,7 +58,6 @@
   }
 }
 
-/* Cosmic Button Styles */
 .btn {
   @apply flex justify-center items-center w-52 h-12 relative overflow-hidden cursor-pointer 
          backdrop-blur-md rounded-full transition-all duration-500 hover:scale-110 
@@ -69,7 +68,7 @@
 }
 
 .btn strong {
-  @apply z-20 font-cinzel text-sm tracking-widest text-white text-shadow-glow;
+  @apply z-20 font-cinzel text-sm tracking-widest text-white shadow-glow;
 }
 
 #container-stars {
