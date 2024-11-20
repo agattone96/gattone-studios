@@ -21,9 +21,11 @@ export default {
       colors: {
         cosmic: {
           dark: "#1A1F2C",
+          darker: "#151922",
           light: "#E5DEFF",
           accent: "#FF719A",
           purple: "#9b87f5",
+          muted: "rgba(229, 222, 255, 0.7)",
         },
       },
       fontFamily: {
@@ -48,12 +50,22 @@ export default {
           "50%": { transform: "scale(1.2)", opacity: "0.5" },
           "100%": { transform: "scale(1)", opacity: "0" },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "slide-in": {
+          "0%": { transform: "translateX(-20px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
       },
       animation: {
         "twinkle": "twinkle 3s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
         "glow": "glow 2s ease-in-out infinite",
         "portal": "portal 2s ease-in-out infinite",
+        "fade-in": "fade-in 0.6s ease-out",
+        "slide-in": "slide-in 0.6s ease-out",
       },
     },
   },
