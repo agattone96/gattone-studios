@@ -94,19 +94,19 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-cosmic-dark via-[#2A1F3D] to-cosmic-dark">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-cosmic-dark via-[#2A1F3D] to-cosmic-dark px-4">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 z-0"
       />
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=2000')] bg-cover bg-center opacity-10 mix-blend-overlay" />
-      <div className="relative z-10 text-center max-w-4xl px-4">
-        <h1 className="font-cinzel text-6xl md:text-7xl lg:text-8xl mb-6 animate-float">
+      <div className="relative z-10 text-center max-w-4xl mx-auto">
+        <h1 className="font-cinzel text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-4 sm:mb-6 animate-float">
           <span className="bg-gradient-to-r from-cosmic-accent via-cosmic-purple to-cosmic-accent bg-clip-text text-transparent animate-glow">
             Cosmic Creations
           </span>
         </h1>
-        <p className="text-xl md:text-2xl mb-8 text-cosmic-light/90 font-inter">
+        <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-cosmic-light/90 font-inter max-w-2xl mx-auto px-4">
           Crafting Digital Magic & Memorable Experiences in the Dark Cosmos
         </p>
         <Link to="/projects" className="btn mx-auto">
