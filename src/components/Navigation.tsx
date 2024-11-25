@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Star } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,57 +24,90 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${
-      isScrolled ? 'bg-cosmic-dark/90 backdrop-blur-sm py-4 shadow-lg' : 'py-6'
-    }`}>
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ type: "spring", stiffness: 100 }}
+      className={`fixed w-full z-50 transition-all duration-500 ${
+        isScrolled ? 'bg-cosmic-dark/90 backdrop-blur-md py-4 shadow-lg' : 'py-6'
+      }`}
+    >
       <div className="container mx-auto flex justify-between items-center px-4">
-        <Link to="/" className="font-cinzel text-xl md:text-2xl font-bold">
-          <span className="bg-gradient-to-r from-cosmic-accent to-cosmic-purple bg-clip-text text-transparent">
+        <Link to="/" className="font-cinzel text-xl md:text-2xl font-bold group">
+          <motion.span 
+            className="bg-gradient-to-r from-cosmic-accent to-cosmic-purple bg-clip-text text-transparent inline-flex items-center gap-2"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            <Star className="w-5 h-5 text-cosmic-accent animate-pulse" />
             Allison Gattone
-          </span>
+          </motion.span>
         </Link>
 
-        {/* Mobile Menu Button */}
-        <button 
+        <motion.button 
           className="md:hidden text-cosmic-light hover:text-cosmic-accent transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        </motion.button>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
           {navLinks.map(({ path, label }) => (
-            <Link
+            <motion.div
               key={path}
-              to={path}
-              className={`nav-link group ${location.pathname === path ? 'text-cosmic-accent' : ''}`}
+              whileHover={{ y: -2 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              {label}
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-            </Link>
+              <Link
+                to={path}
+                className={`nav-link group ${location.pathname === path ? 'text-cosmic-accent' : ''}`}
+              >
+                {label}
+                <motion.span 
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  initial={false}
+                  animate={location.pathname === path ? { scaleX: 1 } : { scaleX: 0 }}
+                />
+              </Link>
+            </motion.div>
           ))}
         </div>
 
-        {/* Mobile Navigation */}
-        <div className={`absolute top-full left-0 w-full bg-cosmic-dark/95 backdrop-blur-lg md:hidden transition-all duration-300 ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}>
-          <div className="flex flex-col space-y-4 p-6">
-            {navLinks.map(({ path, label }) => (
-              <Link
-                key={path}
-                to={path}
-                className={`nav-link text-lg ${location.pathname === path ? 'text-cosmic-accent' : ''}`}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
-        </div>
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-full left-0 w-full bg-cosmic-dark/95 backdrop-blur-lg md:hidden"
+            >
+              <div className="flex flex-col space-y-4 p-6">
+                {navLinks.map(({ path, label }) => (
+                  <motion.div
+                    key={path}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -20, opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 100 }}
+                  >
+                    <Link
+                      to={path}
+                      className={`nav-link text-lg ${location.pathname === path ? 'text-cosmic-accent' : ''}`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
