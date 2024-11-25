@@ -4,7 +4,7 @@ import { faLinkedinIn, faInstagram, faFacebookF, faArtstation } from "@fortaweso
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Star, Sparkles } from "lucide-react";
 
-const Footer = () => {
+export const Footer = () => {
   const socialLinks = [
     {
       icon: faInstagram,
