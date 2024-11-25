@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -9,6 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { ProjectCard } from './projects/ProjectCard';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -71,70 +72,58 @@ const projects = [
 
 export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
-  const navigate = useNavigate();
 
   return (
     <section className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-cosmic-dark via-[#2A1F3D] to-cosmic-dark opacity-50" />
       
-      {/* Animated stars background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=2000')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-b from-cosmic-dark/90 via-cosmic-dark/70 to-cosmic-dark/90" />
       </div>
 
       <div className="container mx-auto relative z-10">
-        <h2 className="font-cinzel text-4xl md:text-5xl mb-12 text-center">
-          <span className="bg-gradient-to-r from-cosmic-accent via-cosmic-purple to-cosmic-accent bg-clip-text text-transparent animate-glow">
-            Featured Projects
-          </span>
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-16"
+        >
+          <h2 className="mb-6">Cosmic Creations</h2>
+          <p className="text-cosmic-light/90 text-lg max-w-2xl mx-auto">
+            Explore a universe of design where creativity knows no bounds.
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div
+            <ProjectCard
               key={project.id}
+              project={project}
               onClick={() => setSelectedProject(project)}
-              className="project-card group cursor-pointer"
-            >
-              <div className="relative h-64 overflow-hidden rounded-lg">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-cosmic-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    <h3 className="font-cinzel text-xl mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-cosmic-light/80 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                      {project.category}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 border-2 border-cosmic-accent/0 group-hover:border-cosmic-accent/50 rounded-lg transition-colors duration-300" />
-              </div>
-            </div>
+            />
           ))}
         </div>
 
-        {/* Call to Action Banner */}
-        <div className="mt-20 text-center p-8 bg-cosmic-dark/50 backdrop-blur-lg rounded-lg border border-cosmic-accent/20">
-          <h3 className="font-cinzel text-2xl mb-4 text-cosmic-light">
-            Inspired by what you see? Let's create something extraordinary together!
-          </h3>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mt-20 text-center p-8 bg-cosmic-dark/50 backdrop-blur-lg rounded-lg border border-cosmic-accent/20"
+        >
+          <h3 className="mb-4">Ready to Start Your Journey?</h3>
+          <p className="text-cosmic-light/90 text-lg mb-8">
+            Let's create something extraordinary together!
+          </p>
           <Link to="/contact" className="btn mx-auto">
             <strong>CONTACT ME</strong>
             <div id="container-stars">
-              <div id="stars"></div>
+              <div id="stars" />
             </div>
             <div id="glow">
-              <div className="circle"></div>
-              <div className="circle"></div>
+              <div className="circle" />
+              <div className="circle" />
             </div>
           </Link>
-        </div>
+        </motion.div>
       </div>
 
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
