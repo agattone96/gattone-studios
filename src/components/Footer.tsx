@@ -4,7 +4,7 @@ import { faLinkedinIn, faInstagram, faFacebookF, faArtstation } from "@fortaweso
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Star, Sparkles } from "lucide-react";
 
-export const Footer = () => {
+const Footer = () => {
   const socialLinks = [
     {
       icon: faInstagram,
@@ -46,7 +46,7 @@ export const Footer = () => {
         transition={{ duration: 0.5 }}
         className="absolute inset-0"
       >
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Ccircle cx=\"10\" cy=\"10\" r=\"1\" fill=\"%239b87f5\" fill-opacity=\"0.1\"%3E%3C/circle%3E%3C/svg%3E')] bg-repeat opacity-20" />
+        <div className="absolute inset-0 bg-[url('/pattern.svg')] bg-repeat opacity-20" />
         <div className="absolute inset-0 bg-gradient-to-t from-cosmic-dark via-transparent to-transparent" />
       </motion.div>
 
@@ -97,16 +97,13 @@ export const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="px-4 py-2 rounded-lg bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
-                           text-cosmic-light focus:border-cosmic-accent/60 focus:outline-none transition-colors
-                           hover:border-cosmic-accent/40"
+                  className="px-4 py-2 rounded-lg bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 text-cosmic-light focus:border-cosmic-accent/60 focus:outline-none transition-colors hover:border-cosmic-accent/40"
                 />
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="px-6 py-2 bg-gradient-to-r from-cosmic-accent to-cosmic-purple text-white rounded-lg
-                           transition-all duration-300 transform hover:shadow-lg hover:shadow-cosmic-accent/20"
+                  className="px-6 py-2 bg-gradient-to-r from-cosmic-accent to-cosmic-purple text-white rounded-lg transition-all duration-300 transform hover:shadow-lg hover:shadow-cosmic-accent/20"
                 >
                   Join the Journey
                 </motion.button>
@@ -129,9 +126,7 @@ export const Footer = () => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 
-                             flex items-center justify-center text-cosmic-light ${link.color}
-                             hover:border-cosmic-accent transition-all duration-300`}
+                    className={`w-10 h-10 rounded-full bg-cosmic-dark/50 backdrop-blur-lg border border-cosmic-accent/20 flex items-center justify-center text-cosmic-light ${link.color} hover:border-cosmic-accent transition-all duration-300`}
                     aria-label={link.label}
                   >
                     <FontAwesomeIcon icon={link.icon} className="text-lg" />
@@ -158,3 +153,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;
