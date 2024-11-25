@@ -31,7 +31,7 @@ export const Timeline = ({ entries }: { entries: TimelineEntry[] }) => {
               </div>
               <p className="text-cosmic-light/80 font-bitter">{entry.description}</p>
             </div>
-            <div className="relative group">
+            <div className="relative flex items-center">
               <motion.div 
                 className="w-12 h-12 rounded-full bg-cosmic-dark border-2 border-cosmic-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
                 whileHover={{ rotate: 360 }}
@@ -43,7 +43,7 @@ export const Timeline = ({ entries }: { entries: TimelineEntry[] }) => {
                   <Medal className="w-6 h-6 text-cosmic-accent" />
                 )}
               </motion.div>
-              <div className="absolute top-1/2 -translate-y-1/2 text-sm font-cinzel text-cosmic-accent whitespace-nowrap px-4 py-1 rounded-full bg-cosmic-darker border border-cosmic-accent/20 shadow-glow">
+              <div className={`absolute ${index % 2 === 0 ? 'left-full ml-4' : 'right-full mr-4'} text-sm font-cinzel text-cosmic-accent whitespace-nowrap px-4 py-1 rounded-full bg-cosmic-darker border border-cosmic-accent/20 shadow-glow`}>
                 {entry.year}
               </div>
             </div>
