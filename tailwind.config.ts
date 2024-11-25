@@ -30,7 +30,7 @@ export default {
       },
       fontFamily: {
         cinzel: ["Cinzel", "serif"],
-        inter: ["Inter", "sans-serif"],
+        bitter: ["Bitter", "serif"],
       },
       textShadow: {
         glow: "0 0 10px #FF719A, 0 0 20px #FF719A",
