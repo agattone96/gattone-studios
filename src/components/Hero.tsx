@@ -1,8 +1,15 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useTheme } from '../contexts/ThemeContext';
 
 export const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { isDark, scrollProgress } = useTheme();
+  const { scrollYProgress } = useScroll();
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -94,19 +101,30 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-cosmic-dark via-[#2A1F3D] to-cosmic-dark px-4">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 z-0"
+        style={{
+          opacity: isDark ? 1 : 0.3,
+          transition: 'opacity 0.5s ease-in-out'
+        }}
       />
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=2000')] bg-cover bg-center opacity-10 mix-blend-overlay" />
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
-        <h1 className="font-cinzel text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-4 sm:mb-6 animate-float">
-          <span className="bg-gradient-to-r from-cosmic-accent via-cosmic-purple to-cosmic-accent bg-clip-text text-transparent animate-glow">
-            Cosmic Creations
-          </span>
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-overlay transition-opacity duration-500"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=2000')",
+          opacity: isDark ? 0.1 : 0.3
+        }}
+      />
+      <motion.div 
+        className="relative z-10 text-center max-w-4xl mx-auto px-4"
+        style={{ opacity, y }}
+      >
+        <h1 className="cosmic-heading mb-4 sm:mb-6">
+          Cosmic Creations
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-cosmic-light/90 font-inter max-w-2xl mx-auto px-4">
+        <p className="cosmic-text mb-6 sm:mb-8">
           Crafting Digital Magic & Memorable Experiences in the Dark Cosmos
         </p>
         <Link to="/projects" className="btn mx-auto">
@@ -119,7 +137,7 @@ export const Hero = () => {
             <div className="circle"></div>
           </div>
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };
