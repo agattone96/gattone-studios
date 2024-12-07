@@ -1,0 +1,10 @@
+            - name: AI Commit Summary
+  # You may pin to the exact commit or the version.
+  # uses: dirtycajunrice/ai-commit-summary@f7b71282b4e809e0669ec1ec5dc5764460d1f4b2
+  uses: dirtycajunrice/ai-commit-summary@1.0.0
+  with:
+    # The repository that the pull request is being opened in
+    repository: # default is 
+    # The GitHub token to use for authenticating the action
+    token: # default is 
+          
