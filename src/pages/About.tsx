@@ -1,6 +1,5 @@
 import { Navigation } from '../components/Navigation';
 import { About as AboutSection } from '../components/About';
-import { Footer } from '../components/Footer';
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -19,7 +18,6 @@ const About = () => {
         </div>
         <AboutSection />
       </motion.div>
-      <Footer />
     </main>
   );
 };
