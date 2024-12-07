@@ -1,6 +1,5 @@
 import { Navigation } from '../components/Navigation';
 import { Projects as ProjectsSection } from '../components/Projects';
-import { Footer } from '../components/Footer';
 import { motion } from "framer-motion";
 
 const Projects = () => {
@@ -19,7 +18,6 @@ const Projects = () => {
         </div>
         <ProjectsSection />
       </motion.div>
-      <Footer />
     </main>
   );
 };

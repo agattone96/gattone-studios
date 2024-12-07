@@ -1,6 +1,5 @@
 import { Navigation } from '../components/Navigation';
 import { Contact as ContactSection } from '../components/Contact';
-import { Footer } from '../components/Footer';
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -19,7 +18,6 @@ const Contact = () => {
         </div>
         <ContactSection />
       </motion.div>
-      <Footer />
     </main>
   );
 };
