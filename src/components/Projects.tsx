@@ -12,23 +12,16 @@ export const Projects = () => {
     <section className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-cosmic-dark via-[#2A1F3D] to-cosmic-dark opacity-50" />
       
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=2000')] bg-cover bg-center opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-cosmic-dark/90 via-cosmic-dark/70 to-cosmic-dark/90" />
-      </div>
-
       <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h2 className="font-cinzel text-4xl sm:text-5xl md:text-6xl mb-6 animate-float">
-            <span className="bg-gradient-to-r from-cosmic-accent via-cosmic-purple to-cosmic-accent bg-clip-text text-transparent animate-glow">
-              Cosmic Creations
-            </span>
+          <h2 className="cosmic-heading font-cinzel text-4xl sm:text-5xl md:text-6xl mb-6 animate-float">
+            Cosmic Creations
           </h2>
-          <p className="text-cosmic-light/90 text-lg max-w-2xl mx-auto">
+          <p className="cosmic-text text-lg max-w-2xl mx-auto">
             Explore a universe of design where creativity knows no bounds.
           </p>
         </motion.div>
@@ -48,8 +41,8 @@ export const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="mt-20 text-center p-8 bg-cosmic-dark/50 backdrop-blur-lg rounded-lg border border-cosmic-accent/20"
         >
-          <h3 className="mb-4">Ready to Start Your Journey?</h3>
-          <p className="text-cosmic-light/90 text-lg mb-8">
+          <h3 className="cosmic-heading mb-4">Ready to Start Your Journey?</h3>
+          <p className="cosmic-text text-lg mb-8">
             Let's create something extraordinary together!
           </p>
           <Link to="/contact" className="btn mx-auto">

@@ -1,11 +1,10 @@
-import { Navigation } from '../components/Navigation';
+import { Layout } from '../components/Layout';
 import { Projects as ProjectsSection } from '../components/Projects';
 import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <main className="min-h-screen bg-cosmic-dark">
-      <Navigation />
+    <Layout>
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -14,7 +13,7 @@ const Projects = () => {
       >
         <ProjectsSection />
       </motion.div>
-    </main>
+    </Layout>
   );
 };
 
