@@ -23,7 +23,11 @@ export const Projects = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h2 className="mb-6">Cosmic Creations</h2>
+          <h2 className="font-cinzel text-4xl sm:text-5xl md:text-6xl mb-6 animate-float">
+            <span className="bg-gradient-to-r from-cosmic-accent via-cosmic-purple to-cosmic-accent bg-clip-text text-transparent animate-glow">
+              Cosmic Creations
+            </span>
+          </h2>
           <p className="text-cosmic-light/90 text-lg max-w-2xl mx-auto">
             Explore a universe of design where creativity knows no bounds.
           </p>
