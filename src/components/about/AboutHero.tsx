@@ -23,7 +23,11 @@ export const AboutHero = () => {
             />
           </div>
         </div>
-        <h1 className="mb-6 animate-float">Cosmic Creative</h1>
+        <h1 className="font-cinzel text-4xl sm:text-5xl md:text-6xl mb-6 animate-float">
+          <span className="bg-gradient-to-r from-cosmic-accent via-cosmic-purple to-cosmic-accent bg-clip-text text-transparent animate-glow">
+            Cosmic Creative
+          </span>
+        </h1>
         <p className="text-cosmic-light/90 text-lg mb-12 max-w-2xl mx-auto px-4 animate-fade-in">
           I'm Allison Gattone, an artist and creative professional passionate about merging art and strategy 
           to build brands that stand out in the digital cosmos.
