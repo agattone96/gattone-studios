@@ -9,10 +9,10 @@ export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-cosmic-dark via-[#2A1F3D] to-cosmic-dark opacity-50" />
+    <section className="cosmic-section">
+      <div className="cosmic-gradient" />
       
-      <div className="container mx-auto relative z-10">
+      <div className="cosmic-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

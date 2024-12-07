@@ -1,11 +1,10 @@
-import { Navigation } from '../components/Navigation';
+import { Layout } from '../components/Layout';
 import { About as AboutSection } from '../components/About';
 import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <main className="min-h-screen bg-cosmic-dark">
-      <Navigation />
+    <Layout>
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -14,7 +13,7 @@ const About = () => {
       >
         <AboutSection />
       </motion.div>
-    </main>
+    </Layout>
   );
 };
 

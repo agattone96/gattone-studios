@@ -1,11 +1,10 @@
-import { Navigation } from '../components/Navigation';
+import { Layout } from '../components/Layout';
 import { Hero } from '../components/Hero';
 import { motion } from "framer-motion";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-cosmic-dark">
-      <Navigation />
+    <Layout>
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -13,7 +12,7 @@ const Index = () => {
       >
         <Hero />
       </motion.div>
-    </main>
+    </Layout>
   );
 };
 

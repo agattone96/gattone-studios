@@ -1,11 +1,10 @@
-import { Navigation } from '../components/Navigation';
+import { Layout } from '../components/Layout';
 import { Contact as ContactSection } from '../components/Contact';
 import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <main className="min-h-screen bg-cosmic-dark">
-      <Navigation />
+    <Layout>
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -14,7 +13,7 @@ const Contact = () => {
       >
         <ContactSection />
       </motion.div>
-    </main>
+    </Layout>
   );
 };
 
