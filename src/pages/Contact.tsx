@@ -12,10 +12,6 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
         className="pt-24"
       >
-        <div className="absolute inset-0 pointer-events-none">
-          <div id="stars" className="absolute inset-0" />
-          <div className="absolute inset-0 bg-gradient-to-b from-cosmic-dark via-transparent to-cosmic-dark" />
-        </div>
         <ContactSection />
       </motion.div>
     </main>
