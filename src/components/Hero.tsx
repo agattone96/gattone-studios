@@ -121,8 +121,10 @@ export const Hero = () => {
         className="relative z-10 text-center max-w-4xl mx-auto px-4"
         style={{ opacity, y }}
       >
-        <h1 className="cosmic-heading mb-4 sm:mb-6">
-          Cosmic Creations
+        <h1 className="font-cinzel text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-4 sm:mb-6 animate-float">
+          <span className="bg-gradient-to-r from-cosmic-accent via-cosmic-purple to-cosmic-accent bg-clip-text text-transparent animate-glow">
+            Cosmic Creations
+          </span>
         </h1>
         <p className="cosmic-text mb-6 sm:mb-8">
           Crafting Digital Magic & Memorable Experiences in the Dark Cosmos
