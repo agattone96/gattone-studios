@@ -15,21 +15,14 @@ export const Layout = ({ children }: LayoutProps) => {
       <Navigation />
       <div className="flex-grow relative">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-overlay transition-opacity duration-500"
+          className="fixed inset-0 bg-cover bg-center opacity-10 mix-blend-overlay transition-opacity duration-500"
           style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=2000')",
             opacity: isDark ? 0.1 : 0.3
           }}
         />
-        <canvas
-          id="starfieldCanvas"
-          className="absolute inset-0 z-0"
-          style={{
-            opacity: isDark ? 1 : 0.3,
-            transition: 'opacity 0.5s ease-in-out'
-          }}
-        />
-        <div className="relative z-10">
+        <div className="fixed inset-0 bg-gradient-to-b from-cosmic-dark/90 via-cosmic-dark/70 to-cosmic-dark/90 pointer-events-none" />
+        <div className="relative z-10 text-cosmic-light shadow-lg">
           {children}
         </div>
       </div>
