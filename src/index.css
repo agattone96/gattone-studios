@@ -13,12 +13,12 @@
 
 @layer base {
   body {
-    @apply font-bitter min-h-screen transition-colors duration-500;
+    @apply font-bitter transition-colors duration-500;
     background: linear-gradient(135deg, var(--night-bg-start) 0%, var(--night-bg-end) 100%);
   }
 
   #root {
-    @apply min-h-screen transition-all duration-500;
+    @apply transition-all duration-500;
     background-blend-mode: overlay;
     position: relative;
   }

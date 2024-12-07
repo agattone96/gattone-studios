@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,10 +23,10 @@ export const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/projects", label: "Projects" },
-    { path: "/about", label: "About" },
-    { path: "/contact", label: "Contact" }
+    { path: "/", label: "Home", description: "Return to the cosmic homepage" },
+    { path: "/projects", label: "Projects", description: "Explore my stellar works" },
+    { path: "/about", label: "About", description: "Learn about the cosmic creator" },
+    { path: "/contact", label: "Contact", description: "Send signals across space" }
   ];
 
   return (
@@ -55,24 +61,35 @@ export const Navigation = () => {
         </motion.button>
 
         <div className="hidden md:flex space-x-8">
-          {navLinks.map(({ path, label }) => (
-            <motion.div
-              key={path}
-              whileHover={{ y: -2 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Link
-                to={path}
-                className={`nav-link group ${location.pathname === path ? 'text-cosmic-accent' : ''}`}
-              >
-                {label}
-                <motion.span 
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                  initial={false}
-                  animate={location.pathname === path ? { scaleX: 1 } : { scaleX: 0 }}
-                />
-              </Link>
-            </motion.div>
+          {navLinks.map(({ path, label, description }) => (
+            <TooltipProvider key={path}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <motion.div
+                    whileHover={{ y: -2 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <Link
+                      to={path}
+                      className={`nav-link group ${location.pathname === path ? 'text-cosmic-accent' : ''}`}
+                    >
+                      {label}
+                      <motion.span 
+                        className="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                        initial={false}
+                        animate={location.pathname === path ? { scaleX: 1 } : { scaleX: 0 }}
+                      />
+                    </Link>
+                  </motion.div>
+                </TooltipTrigger>
+                <TooltipContent 
+                  className="bg-cosmic-dark/90 backdrop-blur-md border border-cosmic-accent text-cosmic-light px-4 py-2 rounded-lg shadow-lg"
+                  sideOffset={5}
+                >
+                  <p className="text-sm">{description}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           ))}
         </div>
 
