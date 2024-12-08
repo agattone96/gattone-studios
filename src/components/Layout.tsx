@@ -13,7 +13,7 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      <div className="flex-grow relative">
+      <main className="flex-grow relative">
         <div 
           className="fixed inset-0 bg-cover bg-center opacity-10 mix-blend-overlay transition-opacity duration-500"
           style={{
@@ -22,10 +22,10 @@ export const Layout = ({ children }: LayoutProps) => {
           }}
         />
         <div className="fixed inset-0 bg-gradient-to-b from-cosmic-dark/90 via-cosmic-dark/70 to-cosmic-dark/90 pointer-events-none" />
-        <div className="relative z-10 text-cosmic-light shadow-lg">
+        <div className="relative z-10 text-cosmic-light">
           {children}
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   );
