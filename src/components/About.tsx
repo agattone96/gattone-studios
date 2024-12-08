@@ -10,23 +10,25 @@ export const About = () => {
       <div className="cosmic-container">
         <AboutHero />
         <Skills />
-        <Timeline entries={[
-          {
-            year: "2020–Present",
-            title: "Alli Draws",
-            description: "Established Alli Draws as a visionary creative studio, delivering bold designs and innovative branding solutions.",
-          },
-          {
-            year: "2020–2023",
-            title: "Tune Up the Manly Salon",
-            description: "Spearheaded branding initiatives that transformed the salon's visual identity.",
-          },
-          {
-            year: "2023–Present",
-            title: "Popping Peppers",
-            description: "Crafted a distinctive, vibrant identity reflecting bold flavors through cohesive packaging and branding strategies.",
-          },
-        ]} />
+        <Timeline
+          entries={[
+            {
+              year: "2020–Present",
+              title: "Alli Draws",
+              description: "Established Alli Draws as a visionary creative studio, delivering bold designs and innovative branding solutions.",
+            },
+            {
+              year: "2020–2023",
+              title: "Tune Up the Manly Salon",
+              description: "Spearheaded branding initiatives that transformed the salon's visual identity.",
+            },
+            {
+              year: "2023–Present",
+              title: "Popping Peppers",
+              description: "Crafted a distinctive, vibrant identity reflecting bold flavors through cohesive packaging and branding strategies.",
+            },
+          ]}
+        />
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
