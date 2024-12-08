@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ContactForm } from "./contact/ContactForm";
 
-export const ContactSection = () => {
+export const Contact = () => {
   return (
     <section className="cosmic-section">
       <div className="cosmic-gradient" />
