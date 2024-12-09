@@ -1,3 +1,4 @@
+```jsx
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn, faInstagram, faFacebookF, faArtstation } from "@fortawesome/free-brands-svg-icons";
@@ -155,3 +156,4 @@ const Footer = () => {
 };
 
 export default Footer;
+```

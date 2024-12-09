@@ -11,7 +11,6 @@ export const Projects = () => {
   return (
     <section className="cosmic-section">
       <div className="cosmic-gradient" />
-      
       <div className="cosmic-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
