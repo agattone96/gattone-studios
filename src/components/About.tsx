@@ -15,17 +15,17 @@ export const About = () => {
             {
               year: "2020–Present",
               title: "Alli Draws",
-              description: "Established Alli Draws as a visionary creative studio, delivering bold designs and innovative branding solutions.",
+              description: "Established Alli Draws as a visionary creative studio, delivering bold designs and innovative branding solutions that captivate and inspire.",
             },
             {
               year: "2020–2023",
               title: "Tune Up the Manly Salon",
-              description: "Spearheaded branding initiatives that transformed the salon's visual identity.",
+              description: "Spearheaded comprehensive branding initiatives that transformed the salon's visual identity and elevated their market presence.",
             },
             {
               year: "2023–Present",
               title: "Popping Peppers",
-              description: "Crafted a distinctive, vibrant identity reflecting bold flavors through cohesive packaging and branding strategies.",
+              description: "Crafted a distinctive, vibrant brand identity that perfectly captures bold flavors through cohesive packaging and innovative branding strategies.",
             },
           ]}
         />
@@ -38,7 +38,7 @@ export const About = () => {
           <h3 className="cosmic-heading mb-6">Let's Create Something Amazing</h3>
           <p className="cosmic-text mb-8 max-w-3xl mx-auto">
             Whether you're looking to craft a bold new brand identity or elevate your digital presence,
-            let's collaborate on something extraordinary.
+            I'm here to help transform your vision into reality. Let's collaborate on something extraordinary.
           </p>
           <a
             href="mailto:allisongattone@gmail.com"
