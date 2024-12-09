@@ -33,12 +33,13 @@ export const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className="text-center mt-20"
         >
-          <h3 className="cosmic-heading mb-6">Let's Create Something Amazing</h3>
+          <h3 className="cosmic-heading mb-6">Driven by passion, inspired by the cosmos</h3>
           <p className="cosmic-text mb-8 max-w-3xl mx-auto">
             Whether you're looking to craft a bold new brand identity or elevate your digital presence,
-            I'm here to help transform your vision into reality. Let's collaborate on something extraordinary.
+            I'm here to help transform your vision into reality. Let's create something extraordinary together.
           </p>
           <a
             href="mailto:allisongattone@gmail.com"
