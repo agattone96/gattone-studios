@@ -1,4 +1,3 @@
-```jsx
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn, faInstagram, faFacebookF, faArtstation } from "@fortawesome/free-brands-svg-icons";
@@ -72,7 +71,7 @@ const Footer = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <a 
-                      href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} 
+                      href={item.toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`}
                       className="text-cosmic-light/80 hover:text-cosmic-accent transition-colors duration-300 flex items-center space-x-2 group"
                     >
                       <span className="h-px w-4 bg-cosmic-accent/30 group-hover:w-6 transition-all duration-300" />
@@ -156,4 +155,3 @@ const Footer = () => {
 };
 
 export default Footer;
-```
