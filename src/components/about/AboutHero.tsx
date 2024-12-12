@@ -29,8 +29,8 @@ export const AboutHero = () => {
           {/* Profile Image */}
           <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-cosmic-accent/30 backdrop-blur-sm">
             <img
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-              alt="Allison Gattone"
+              src="https://i.postimg.cc/dQjhM1PW/professional-headshot.jpg"
+              alt="Allison Gattone Professional Headshot"
               className="w-full h-full object-cover"
             />
           </div>
@@ -69,7 +69,7 @@ export const AboutHero = () => {
         </motion.h1>
 
         <motion.p 
-          className="text-cosmic-light/90 text-lg mb-12 max-w-2xl mx-auto px-4 leading-relaxed"
+          className="text-cosmic-light/80 text-lg mb-12 max-w-2xl mx-auto px-4 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}

@@ -13,20 +13,29 @@ export const About = () => {
         <Timeline
           entries={[
             {
-              year: "2020–Present",
-              title: "Alli Draws",
-              description: "Established Alli Draws as a visionary creative studio, delivering bold designs and innovative branding solutions that captivate and inspire.",
-            },
-            {
-              year: "2020–2023",
-              title: "Tune Up the Manly Salon",
-              description: "Spearheaded comprehensive branding initiatives that transformed the salon's visual identity and elevated their market presence.",
-            },
-            {
               year: "2023–Present",
               title: "Popping Peppers",
               description: "Crafted a distinctive, vibrant brand identity that perfectly captures bold flavors through cohesive packaging and innovative branding strategies.",
+              image: "https://i.postimg.cc/1tRRb1kc/1f24af025c4f01e3.png",
+              imageAlt: "Popping Peppers Logo",
+              skills: ["Branding", "Package Design", "Marketing Strategy"]
             },
+            {
+              year: "2022–Present",
+              title: "Staxx",
+              description: "Leading creative initiatives and brand development for an innovative retail concept, combining modern aesthetics with strategic marketing approaches.",
+              image: "https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/461268755_1095215785324161_9120966974527925569_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=8HuXOUd9WOgQ7kNvgECPxOR&_nc_zt=23&_nc_ht=scontent.ftpa1-2.fna&_nc_gid=APqHeFtXqfu2QrwG8OOQkj4&oh=00_AYB6yl_hCFvuHq0Vz3iUtPuxlrIKJxiSyBvYk_1KBesBsA&oe=6760B390",
+              imageAlt: "Staxx Logo",
+              skills: ["Brand Development", "Visual Design", "Marketing"]
+            },
+            {
+              year: "2020–Present",
+              title: "SC Liquidator",
+              description: "Established comprehensive branding initiatives and marketing strategies that elevated the company's market presence and customer engagement.",
+              image: "https://i.postimg.cc/hjSC1fc6/SCL-Logo-Profile-Pic.jpg",
+              imageAlt: "SC Liquidator Logo",
+              skills: ["Brand Strategy", "Digital Marketing", "Customer Engagement"]
+            }
           ]}
         />
         

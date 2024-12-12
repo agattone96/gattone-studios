@@ -20,6 +20,7 @@ interface TimelineEntry {
   description: string;
   skills?: string[];
   image?: string;
+  imageAlt?: string;
 }
 
 export const Timeline = ({ entries }: { entries: TimelineEntry[] }) => {
@@ -66,7 +67,7 @@ export const Timeline = ({ entries }: { entries: TimelineEntry[] }) => {
                     whileHover={{ scale: 1.02 }}
                   >
                     <div 
-                      className="flex items-center gap-2 mb-2"
+                      className="flex items-center gap-4 mb-4"
                       style={{ justifyContent: index % 2 === 0 ? 'flex-end' : 'flex-start' }}
                     >
                       <Calendar className="w-5 h-5 text-cosmic-accent animate-pulse" />
@@ -75,10 +76,23 @@ export const Timeline = ({ entries }: { entries: TimelineEntry[] }) => {
                       </h4>
                     </div>
                     
+                    {entry.image && (
+                      <div className="mb-4">
+                        <img 
+                          src={entry.image} 
+                          alt={entry.imageAlt || `${entry.title} visual`}
+                          className="w-24 h-24 object-cover rounded-lg mx-auto border-2 border-cosmic-accent/20 
+                                   hover:border-cosmic-accent/50 transition-all duration-300"
+                        />
+                      </div>
+                    )}
+                    
                     <p className="text-cosmic-light/80 font-bitter">{entry.description}</p>
                     
                     {entry.skills && (
-                      <div className="mt-4 flex flex-wrap gap-2 justify-end">
+                      <div className={`mt-4 flex flex-wrap gap-2 ${
+                        index % 2 === 0 ? "justify-end" : "justify-start"
+                      }`}>
                         {entry.skills.map((skill, skillIndex) => (
                           <span 
                             key={skillIndex}
@@ -100,16 +114,16 @@ export const Timeline = ({ entries }: { entries: TimelineEntry[] }) => {
                     </DialogTitle>
                   </DialogHeader>
                   <div className="space-y-4">
-                    <p className="text-cosmic-light/80">{entry.description}</p>
                     {entry.image && (
                       <div className="relative aspect-video rounded-lg overflow-hidden">
                         <img 
                           src={entry.image} 
-                          alt={`Visual representation of ${entry.title}`}
-                          className="object-cover w-full h-full"
+                          alt={entry.imageAlt || `${entry.title} visual`}
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     )}
+                    <p className="text-cosmic-light/80">{entry.description}</p>
                   </div>
                 </DialogContent>
               </Dialog>
