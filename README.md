@@ -1,69 +1,38 @@
-# Welcome to your Lovable project
+# Welcome to Cosmic Studios: Allison Gattone’s Portfolio
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/bce32c74-49aa-4772-895c-767e77b10e15
+**Cosmic Studios** is a personal portfolio project designed to showcase the creative and professional journey of Allison Gattone. Featuring a cosmic theme, this portfolio presents an **interactive constellation** where each star represents a unique skill or area of expertise. Visitors can explore skills such as **Digital Media Strategy**, **Content Creation**, and **Branding** through an engaging and immersive design.
 
-## How can I edit this code?
+This project highlights Allison’s creativity and innovative approach to digital media, offering a visually stunning way to discover her work, achievements, and professional milestones.
 
-There are several ways of editing your application.
+## Project Info
 
-**Use Lovable**
+**Portfolio URL**: [Cosmic Studios Portfolio](https://lovable.dev/projects/bce32c74-49aa-4772-895c-767e77b10e15)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bce32c74-49aa-4772-895c-767e77b10e15) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## About the Project
 
-**Use your preferred IDE**
+- **Technologies Used**:
+  - Vite
+  - TypeScript
+  - React
+  - Shadcn-UI
+  - Tailwind CSS
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Purpose**:
+  To create a unique digital representation of Allison’s skills, combining **design**, **interactivity**, and **storytelling**.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Theme**:
+  Cosmic-inspired visuals with responsive design and interactivity for an engaging user experience.
 
-Follow these steps:
+## Deployment
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+This project is hosted on Lovable. To view the live portfolio, visit the [Cosmic Studios Portfolio](https://lovable.dev/projects/bce32c74-49aa-4772-895c-767e77b10e15).
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Acknowledgments
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/bce32c74-49aa-4772-895c-767e77b10e15) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Thank you for visiting and exploring this digital portfolio. Feel free to reach out via the contact section for collaboration or inquiries!
