@@ -9,6 +9,7 @@ import {
 
 interface SkillNodeProps {
   name: string;
+  starName: string;
   description: string;
   x: number;
   y: number;

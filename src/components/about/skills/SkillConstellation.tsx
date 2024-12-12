@@ -4,51 +4,58 @@ import { SkillNode } from "./SkillNode";
 const skills = [
   {
     name: "Digital Media Strategy",
+    starName: "Electra",
     description: "Expert in campaign planning, execution, and analytics, driving measurable results through data-driven strategies.",
     x: 20,
-    y: 30,
+    y: 15,
     icon: "network"
   },
   {
     name: "Content Creation & Analytics",
+    starName: "Taygete",
     description: "Crafting engaging digital content while leveraging analytics for continuous optimization and improved performance.",
-    x: 60,
-    y: 20,
+    x: 25,
+    y: 35,
     icon: "video"
   },
   {
     name: "Event Coordination",
+    starName: "Maia",
     description: "Strategic planning and flawless execution of events, ensuring memorable experiences and successful outcomes.",
-    x: 80,
-    y: 40,
+    x: 45,
+    y: 25,
     icon: "calendar"
   },
   {
     name: "Client Relationship Management",
+    starName: "Celaeno",
     description: "Building and maintaining strong client partnerships through effective communication and exceptional service delivery.",
-    x: 30,
-    y: 60,
+    x: 65,
+    y: 35,
     icon: "users"
   },
   {
     name: "Branding and Visual Design",
+    starName: "Alcyone",
     description: "Creating cohesive and impactful brand experiences through innovative visual design solutions.",
     x: 70,
-    y: 70,
+    y: 60,
     icon: "palette"
   },
   {
     name: "Social Media Management",
+    starName: "Sterope",
     description: "Driving engagement and visibility through strategic social media campaigns and community management.",
     x: 40,
-    y: 45,
+    y: 75,
     icon: "share"
   },
   {
     name: "Custom Product Design",
+    starName: "Merope",
     description: "Developing unique merchandise and products that align with brand identity and market demands.",
     x: 85,
-    y: 25,
+    y: 75,
     icon: "package"
   }
 ];
@@ -63,6 +70,16 @@ export const SkillConstellation = () => {
         className="absolute inset-0 bg-gradient-to-b from-cosmic-dark/50 to-cosmic-darker/50 
                    backdrop-blur-sm rounded-lg border border-cosmic-accent/10"
       >
+        {/* Constellation Title */}
+        <motion.h3
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="text-2xl font-cinzel text-cosmic-light text-center mt-4 mb-8"
+        >
+          Seven Sisters Skills Constellation
+        </motion.h3>
+
         {/* Constellation Lines */}
         <svg className="absolute inset-0 w-full h-full">
           {skills.map((skill, index) => (
@@ -78,6 +95,7 @@ export const SkillConstellation = () => {
                 y2={`${nextSkill.y}%`}
                 stroke="url(#skillGradient)"
                 strokeWidth="2"
+                strokeDasharray="5,5"
                 className="animate-pulse"
               />
             ))
@@ -85,8 +103,8 @@ export const SkillConstellation = () => {
           <defs>
             <linearGradient id="skillGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#9b87f5" />
-              <stop offset="50%" stopColor="#0EA5E9" />
-              <stop offset="100%" stopColor="#D946EF" />
+              <stop offset="50%" stopColor="#FF719A" />
+              <stop offset="100%" stopColor="#9b87f5" />
             </linearGradient>
           </defs>
         </svg>
@@ -98,6 +116,24 @@ export const SkillConstellation = () => {
             {...skill}
             delay={index * 0.2}
           />
+        ))}
+
+        {/* Star Names */}
+        {skills.map((skill) => (
+          <motion.div
+            key={`star-${skill.starName}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.6 }}
+            transition={{ delay: 1 }}
+            className="absolute text-cosmic-light/50 text-sm"
+            style={{
+              left: `${skill.x}%`,
+              top: `${skill.y + 8}%`,
+              transform: 'translate(-50%, 0)'
+            }}
+          >
+            {skill.starName}
+          </motion.div>
         ))}
 
         {/* Background Animation */}
