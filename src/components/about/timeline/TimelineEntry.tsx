@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Calendar, Star, Medal } from "lucide-react";
+import { Calendar } from "lucide-react";
+import { TimelineNode } from "./TimelineNode";
 import {
   Tooltip,
   TooltipContent,
