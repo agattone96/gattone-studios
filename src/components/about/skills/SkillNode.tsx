@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Icon } from "lucide-react";
+import { Network, Video, Calendar, Users, Palette, Share, Package } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -16,7 +16,19 @@ interface SkillNodeProps {
   icon: string;
 }
 
+const iconMap = {
+  network: Network,
+  video: Video,
+  calendar: Calendar,
+  users: Users,
+  palette: Palette,
+  share: Share,
+  package: Package,
+};
+
 export const SkillNode = ({ name, description, x, y, delay = 0, icon }: SkillNodeProps) => {
+  const IconComponent = iconMap[icon as keyof typeof iconMap];
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0 }}
@@ -35,11 +47,12 @@ export const SkillNode = ({ name, description, x, y, delay = 0, icon }: SkillNod
                          group hover:border-cosmic-accent/60 transition-all duration-300
                          hover:shadow-[0_0_20px_rgba(255,113,154,0.3)]"
             >
-              <Icon
-                icon={icon}
-                className="w-8 h-8 text-cosmic-accent group-hover:text-cosmic-purple 
-                          transition-colors duration-300"
-              />
+              {IconComponent && (
+                <IconComponent
+                  className="w-8 h-8 text-cosmic-accent group-hover:text-cosmic-purple 
+                            transition-colors duration-300"
+                />
+              )}
             </motion.div>
           </TooltipTrigger>
           <TooltipContent 
