@@ -37,9 +37,6 @@ export const Skills = () => {
         <h3 className="cosmic-heading mb-6">
           Explore the universe of creativity and strategy I bring to every project
         </h3>
-        <p className="cosmic-text mb-8 max-w-3xl mx-auto">
-          Explore the universe of creativity and strategy I bring to every project.
-        </p>
         <Link to="/projects" className="btn mx-auto">
           <strong>EXPLORE MY WORK</strong>
           <div id="container-stars">
