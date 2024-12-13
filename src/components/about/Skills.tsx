@@ -35,7 +35,7 @@ export const Skills = () => {
         className="text-center mt-20"
       >
         <h3 className="cosmic-heading mb-6">
-          Let's create something extraordinary
+          Explore the universe of creativity and strategy I bring to every project
         </h3>
         <p className="cosmic-text mb-8 max-w-3xl mx-auto">
           Explore the universe of creativity and strategy I bring to every project.
