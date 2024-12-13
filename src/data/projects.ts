@@ -14,7 +14,7 @@ export const projects = [
   {
     id: 2,
     title: 'Tune Up - The Manly Salon',
-    description: 'Tune Up - The Manly Salon is a men's grooming destination, offering services such as haircuts, beard trims, and hot towel shaves. Designed with a masculine aesthetic, this project included clean, professional branding, modern web presence, and visually compelling marketing materials.',
+    description: "Tune Up - The Manly Salon is a men's grooming destination, offering services such as haircuts, beard trims, and hot towel shaves. Designed with a masculine aesthetic, this project included clean, professional branding, modern web presence, and visually compelling marketing materials.",
     image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800',
     links: {
       Website: 'https://tuneupsalon.com',
