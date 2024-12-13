@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { SkillConstellation } from "./skills/SkillConstellation";
-import { Link } from "react-router-dom";
 
 export const Skills = () => {
   return (
@@ -26,27 +25,6 @@ export const Skills = () => {
         className="mb-16"
       >
         <SkillConstellation />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mt-20"
-      >
-        <h3 className="cosmic-heading mb-6">
-          Explore the universe of creativity and strategy I bring to every project
-        </h3>
-        <Link to="/projects" className="btn mx-auto">
-          <strong>EXPLORE MY WORK</strong>
-          <div id="container-stars">
-            <div id="stars" />
-          </div>
-          <div id="glow">
-            <div className="circle" />
-            <div className="circle" />
-          </div>
-        </Link>
       </motion.div>
     </section>
   );
