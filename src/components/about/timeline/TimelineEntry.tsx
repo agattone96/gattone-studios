@@ -62,8 +62,8 @@ export const TimelineEntry = ({ entry, index }: TimelineEntryProps) => {
                 <img 
                   src={entry.image} 
                   alt={entry.imageAlt || `${entry.title} visual`}
-                  className="w-24 h-24 object-cover rounded-lg mx-auto border-2 border-cosmic-accent/20 
-                           hover:border-cosmic-accent/50 transition-all duration-300"
+                  className="w-32 h-32 object-contain rounded-lg mx-auto border-2 border-cosmic-accent/20 
+                           hover:border-cosmic-accent/50 transition-all duration-300 bg-cosmic-darker/80 p-2"
                 />
               </div>
             )}
@@ -100,7 +100,7 @@ export const TimelineEntry = ({ entry, index }: TimelineEntryProps) => {
                 <img 
                   src={entry.image} 
                   alt={entry.imageAlt || `${entry.title} visual`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-cosmic-darker/80 p-4"
                 />
               </div>
             )}
