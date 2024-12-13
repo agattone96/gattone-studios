@@ -65,19 +65,24 @@ export const About = () => {
             Whether you're looking to craft a bold new brand identity or elevate your digital presence,
             I'm here to help transform your vision into reality. Let's create something extraordinary together.
           </p>
-          <a
+          <motion.a
             href="mailto:allisongattone@gmail.com"
-            className="btn mx-auto"
+            className="btn mx-auto scale-125"
+            whileHover={{ 
+              scale: 1.35,
+              boxShadow: "0 0 30px rgba(255, 113, 154, 0.5)"
+            }}
+            whileTap={{ scale: 1.25 }}
           >
-            <strong>GET IN TOUCH</strong>
+            <strong className="tracking-wider">GET IN TOUCH</strong>
             <div id="container-stars">
-              <div id="stars" />
+              <div id="stars" className="animate-twinkle" />
             </div>
             <div id="glow">
-              <div className="circle" />
-              <div className="circle" />
+              <div className="circle animate-pulse" />
+              <div className="circle animate-pulse delay-75" />
             </div>
-          </a>
+          </motion.a>
         </motion.div>
       </div>
     </section>
