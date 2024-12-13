@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar } from "lucide-react";
+import { Calendar, ExternalLink } from "lucide-react";
 import { TimelineNode } from "./TimelineNode";
 import {
   Tooltip,
@@ -19,10 +19,12 @@ interface TimelineEntryProps {
   entry: {
     year: string;
     title: string;
+    role?: string;
     description: string;
     skills?: string[];
     image?: string;
     imageAlt?: string;
+    gallery?: string;
   };
   index: number;
 }
@@ -52,9 +54,14 @@ export const TimelineEntry = ({ entry, index }: TimelineEntryProps) => {
               style={{ justifyContent: index % 2 === 0 ? 'flex-end' : 'flex-start' }}
             >
               <Calendar className="w-5 h-5 text-cosmic-accent animate-pulse" />
-              <h4 className="text-xl md:text-2xl font-cinzel bg-gradient-to-r from-cosmic-accent to-cosmic-purple bg-clip-text text-transparent">
-                {entry.title}
-              </h4>
+              <div>
+                <h4 className="text-xl md:text-2xl font-cinzel bg-gradient-to-r from-cosmic-accent to-cosmic-purple bg-clip-text text-transparent">
+                  {entry.title}
+                </h4>
+                {entry.role && (
+                  <p className="text-sm text-cosmic-light/70 mt-1">{entry.role}</p>
+                )}
+              </div>
             </div>
             
             {entry.image && (
@@ -92,6 +99,9 @@ export const TimelineEntry = ({ entry, index }: TimelineEntryProps) => {
           <DialogHeader>
             <DialogTitle className="text-2xl font-cinzel text-cosmic-light">
               {entry.title}
+              {entry.role && (
+                <span className="block text-lg text-cosmic-light/70 mt-2">{entry.role}</span>
+              )}
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
@@ -105,6 +115,17 @@ export const TimelineEntry = ({ entry, index }: TimelineEntryProps) => {
               </div>
             )}
             <p className="text-cosmic-light/80">{entry.description}</p>
+            {entry.gallery && (
+              <a
+                href={entry.gallery}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-cosmic-accent hover:text-cosmic-purple transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                View Project Gallery
+              </a>
+            )}
           </div>
         </DialogContent>
       </Dialog>

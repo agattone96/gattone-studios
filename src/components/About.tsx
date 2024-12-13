@@ -14,27 +14,42 @@ export const About = () => {
           entries={[
             {
               year: "2023–Present",
-              title: "Popping Peppers",
-              description: "Crafted a distinctive, vibrant brand identity that perfectly captures bold flavors through cohesive packaging and innovative branding strategies.",
-              image: "https://i.postimg.cc/1tRRb1kc/1f24af025c4f01e3.png",
-              imageAlt: "Popping Peppers Logo",
-              skills: ["Branding", "Package Design", "Marketing Strategy"]
-            },
-            {
-              year: "2022–Present",
-              title: "Staxx",
-              description: "Leading creative initiatives and brand development for an innovative retail concept, combining modern aesthetics with strategic marketing approaches.",
-              image: "https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/461268755_1095215785324161_9120966974527925569_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=8HuXOUd9WOgQ7kNvgECPxOR&_nc_zt=23&_nc_ht=scontent.ftpa1-2.fna&_nc_gid=APqHeFtXqfu2QrwG8OOQkj4&oh=00_AYB6yl_hCFvuHq0Vz3iUtPuxlrIKJxiSyBvYk_1KBesBsA&oe=6760B390",
-              imageAlt: "Staxx Logo",
-              skills: ["Brand Development", "Visual Design", "Marketing"]
-            },
-            {
-              year: "2020–Present",
               title: "SC Liquidator",
-              description: "Established comprehensive branding initiatives and marketing strategies that elevated the company's market presence and customer engagement.",
+              role: "Executive Assistant, Digital Media & Operations Support",
+              description: "Led B2B wholesale operations overhaul driving 10% revenue increase, while optimizing event coordination and operational workflows using Salesforce Lightning. Increased executive efficiency by 15% through streamlined processes.",
               image: "https://i.postimg.cc/hjSC1fc6/SCL-Logo-Profile-Pic.jpg",
               imageAlt: "SC Liquidator Logo",
-              skills: ["Brand Strategy", "Digital Marketing", "Customer Engagement"]
+              skills: ["Digital Operations", "Salesforce Lightning", "B2B Strategy"],
+              gallery: "https://allisongattone.artstation.com/projects/DLdnO9"
+            },
+            {
+              year: "2019–Present",
+              title: "Alli Draws Inc.",
+              role: "Owner & Digital Media Specialist",
+              description: "Founded and operated a successful creative business specializing in custom merchandise design and digital media services. Consistently achieved 100% client satisfaction through end-to-end creative process management.",
+              image: "https://cdna.artstation.com/p/assets/images/images/082/458/512/large/allison-gattone-popping-peppers-full-logo-design-red-orange-variant.jpg?1733058734",
+              imageAlt: "Alli Draws Logo",
+              skills: ["Brand Design", "Digital Media", "Creative Direction"],
+              gallery: "https://allisongattone.artstation.com"
+            },
+            {
+              year: "2022",
+              title: "Beasley Media Group",
+              role: "Digital Client Service Manager",
+              description: "Achieved 20% improvement in client satisfaction through data-driven campaigns and streamlined content approval processes, reducing turnaround time by 25%. Enhanced engagement metrics by 15% through cross-team collaboration.",
+              image: "https://images.unsplash.com/photo-1598128558393-70ff21433be0?auto=format&fit=crop&w=800",
+              imageAlt: "Beasley Media Group Representation",
+              skills: ["Client Management", "Campaign Optimization", "Analytics"]
+            },
+            {
+              year: "2021",
+              title: "Tune Up - The Manly Salon",
+              role: "Executive Management Assistant & Social Media Coordinator",
+              description: "Reinvigorated social media strategy resulting in 20% increased engagement. Organized promotional events to expand brand reach and visibility while managing administrative operations.",
+              image: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800",
+              imageAlt: "Tune Up - The Manly Salon",
+              skills: ["Social Media Strategy", "Event Planning", "Brand Management"],
+              gallery: "https://allisongattone.artstation.com/projects/bgV68G"
             }
           ]}
         />
