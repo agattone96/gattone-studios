@@ -1,13 +1,9 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ProjectCard } from './projects/ProjectCard';
-import { ProjectDialog } from './projects/ProjectDialog';
+import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
+import { ExternalLink } from 'lucide-react';
 
 export const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
-
   return (
     <section className="cosmic-section">
       <div className="cosmic-gradient" />
@@ -25,13 +21,48 @@ export const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <ProjectCard
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
               key={project.id}
-              project={project}
-              onClick={() => setSelectedProject(project)}
-            />
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-cosmic-dark/30 backdrop-blur-lg rounded-lg border border-cosmic-accent/20 overflow-hidden hover:border-cosmic-accent/40 transition-all duration-300"
+            >
+              <div className="aspect-video relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-cosmic-dark/90 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-3 text-cosmic-light">
+                  {project.title}
+                </h3>
+                <p className="text-cosmic-light/80 mb-4">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {Object.entries(project.links).map(([label, url], idx) => (
+                    <a
+                      key={idx}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-cosmic-accent hover:text-cosmic-accent/80 transition-colors"
+                    >
+                      {label}
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
 
@@ -56,11 +87,6 @@ export const Projects = () => {
           </Link>
         </motion.div>
       </div>
-
-      <ProjectDialog 
-        project={selectedProject} 
-        onOpenChange={() => setSelectedProject(null)} 
-      />
     </section>
   );
 };
