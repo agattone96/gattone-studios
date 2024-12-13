@@ -4,10 +4,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 interface TimelineEntry {
   year: string;
   title: string;
+  role?: string;  // Added role as optional property
   description: string;
   skills?: string[];
   image?: string;
   imageAlt?: string;
+  gallery?: string;
 }
 
 export const Timeline = ({ entries }: { entries: TimelineEntry[] }) => {
