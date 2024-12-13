@@ -12,8 +12,12 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply font-bitter transition-colors duration-500;
+    @apply font-bitter transition-colors duration-500 leading-relaxed;
     background: linear-gradient(135deg, var(--night-bg-start) 0%, var(--night-bg-end) 100%);
   }
 
@@ -23,11 +27,24 @@
     position: relative;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  /* Improved Typography */
+  h1 {
+    @apply font-cinzel text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-cosmic-light;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 113, 154, 0.3);
+  }
+
+  h2 {
+    @apply font-cinzel text-3xl md:text-4xl lg:text-5xl font-semibold text-cosmic-light;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  h3 {
+    @apply font-cinzel text-2xl md:text-3xl font-semibold text-cosmic-light;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   p, span, a {
+    @apply text-cosmic-light/90 leading-relaxed;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 }
@@ -60,10 +77,11 @@
     @apply absolute inset-0 bg-gradient-to-b from-cosmic-dark via-[#2A1F3D] to-cosmic-dark opacity-50;
   }
 
+  /* Enhanced Button Styles */
   .btn {
     @apply flex justify-center items-center w-52 h-12 relative overflow-hidden cursor-pointer 
            backdrop-blur-md rounded-full transition-all duration-500 hover:scale-110 
-           border-[3px] border-transparent bg-origin-border;
+           border-[3px] border-transparent bg-origin-border hover:shadow-[0_0_20px_rgba(255,113,154,0.4)];
     background-image: linear-gradient(#212121, #212121),
       linear-gradient(137.48deg, #ffdb3b 10%, #fe53bb 45%, #8f51ea 67%, #0044ff 87%);
     background-clip: content-box, border-box;
@@ -91,8 +109,27 @@
   .shadow-glow {
     text-shadow: 0 0 10px #FF719A, 0 0 20px #FF719A;
   }
+
+  /* Parallax Effect Classes */
+  .parallax {
+    @apply will-change-transform;
+    transform: translateZ(0);
+  }
+
+  .parallax-slow {
+    transform: translateZ(-10px) scale(2);
+  }
+
+  .parallax-medium {
+    transform: translateZ(-5px) scale(1.5);
+  }
+
+  .parallax-fast {
+    transform: translateZ(0) scale(1);
+  }
 }
 
+/* Dynamic Background Elements */
 #container-stars {
   @apply absolute inset-0 -z-10 overflow-hidden transition-all duration-500 backdrop-blur-md rounded-full;
 }
