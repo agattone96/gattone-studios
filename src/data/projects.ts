@@ -8,7 +8,7 @@ export const projects = [
       Website: 'https://poppingpeppers.square.site',
       Facebook: 'https://facebook.com/poppingpeppersofficial',
       Instagram: 'https://instagram.com/poppingpeppersofficial',
-      'Photo Gallery': 'https://photos.app.goo.gl/xDvv4k6sw5kVyKE7A',
+      'Photo Gallery': 'https://allisongattone.artstation.com/projects/4925nq',
     },
   },
   {
@@ -19,6 +19,7 @@ export const projects = [
     links: {
       Website: 'https://tuneupsalon.com',
       'Chamber of Commerce Page': 'https://chamberofcommerce.com/united-states/florida/tampa/barber-shop/2012538160-tune-up-the-manly-salon',
+      'Photo Gallery': 'https://allisongattone.artstation.com/projects/bgV68G',
     },
   },
   {
@@ -28,6 +29,7 @@ export const projects = [
     image: 'https://i.postimg.cc/hjSC1fc6/SCL-Logo-Profile-Pic.jpg',
     links: {
       Website: 'https://scliquidator.com',
+      'Photo Gallery': 'https://allisongattone.artstation.com/projects/DLdnO9',
     },
   },
   {
