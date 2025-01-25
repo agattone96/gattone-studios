@@ -6,17 +6,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-interface SkillNodeProps {
-  name: string;
-  starName: string;
-  description: string;
-  x: number;
-  y: number;
-  delay?: number;
-  icon: string;
-  color: string;
-}
+import { SkillNodeProps } from "./types";
 
 const iconMap = {
   network: Network,
