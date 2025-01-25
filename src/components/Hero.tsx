@@ -101,7 +101,10 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      aria-label="Hero section"
+    >
       <canvas
         ref={canvasRef}
         className="absolute inset-0 z-0"
@@ -109,6 +112,7 @@ export const Hero = () => {
           opacity: isDark ? 1 : 0.3,
           transition: 'opacity 0.5s ease-in-out'
         }}
+        aria-hidden="true"
       />
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-overlay transition-opacity duration-500"
@@ -116,6 +120,7 @@ export const Hero = () => {
           backgroundImage: "url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=2000')",
           opacity: isDark ? 0.1 : 0.3
         }}
+        aria-hidden="true"
       />
       <motion.div 
         className="relative z-10 text-center max-w-4xl mx-auto px-4"
@@ -129,17 +134,21 @@ export const Hero = () => {
         <p className="cosmic-text mb-6 sm:mb-8">
           Crafting Digital Magic & Memorable Experiences in the Dark Cosmos
         </p>
-        <Link to="/projects" className="btn mx-auto">
+        <Link 
+          to="/projects" 
+          className="btn mx-auto"
+          aria-label="Explore my work"
+        >
           <strong>EXPLORE MY WORK</strong>
-          <div id="container-stars">
+          <div id="container-stars" aria-hidden="true">
             <div id="stars"></div>
           </div>
-          <div id="glow">
+          <div id="glow" aria-hidden="true">
             <div className="circle"></div>
             <div className="circle"></div>
           </div>
         </Link>
       </motion.div>
-    </div>
+    </section>
   );
 };

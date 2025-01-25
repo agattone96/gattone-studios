@@ -5,8 +5,8 @@ import { ExternalLink } from 'lucide-react';
 
 export const Projects = () => {
   return (
-    <section className="cosmic-section">
-      <div className="cosmic-gradient" />
+    <section className="cosmic-section" aria-label="Projects showcase">
+      <div className="cosmic-gradient" aria-hidden="true" />
       <div className="cosmic-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,23 +21,25 @@ export const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8" role="list">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className="bg-cosmic-dark/30 backdrop-blur-lg rounded-lg border border-cosmic-accent/20 overflow-hidden hover:border-cosmic-accent/40 transition-all duration-300"
+              role="listitem"
             >
               <div className="aspect-video relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-cosmic-dark/90 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-cosmic-dark/90 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
               </div>
               
               <div className="p-6">
@@ -55,14 +57,15 @@ export const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-cosmic-accent hover:text-cosmic-accent/80 transition-colors"
+                      aria-label={`Visit ${label} for ${project.title}`}
                     >
                       {label}
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4" aria-hidden="true" />
                     </a>
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
 
@@ -75,12 +78,16 @@ export const Projects = () => {
           <p className="cosmic-text text-lg mb-8">
             Let's create something extraordinary together!
           </p>
-          <Link to="/contact" className="btn mx-auto">
+          <Link 
+            to="/contact" 
+            className="btn mx-auto"
+            aria-label="Contact me to start your project"
+          >
             <strong>CONTACT ME</strong>
-            <div id="container-stars">
+            <div id="container-stars" aria-hidden="true">
               <div id="stars" />
             </div>
-            <div id="glow">
+            <div id="glow" aria-hidden="true">
               <div className="circle" />
               <div className="circle" />
             </div>
